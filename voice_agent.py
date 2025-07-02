@@ -31,6 +31,7 @@ async def entrypoint(ctx: JobContext):
 
     await session.start(room=ctx.room, agent=Assistant())
     await asyncio.sleep(1)
+    print(100*"--", dir(session))
     await session.say("Hello! How can I help you today?", allow_interruptions=True)
 
     # 👇 This enables real-time voice chat!
@@ -38,6 +39,6 @@ async def entrypoint(ctx: JobContext):
 
 if __name__ == "__main__":
     load_dotenv()
-    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, port=8100))
+    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))
 
 

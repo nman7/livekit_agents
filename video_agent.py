@@ -43,6 +43,6 @@ if __name__ == "__main__":
     cli.run_app(
         WorkerOptions(
             entrypoint_fnc=entrypoint,
-            port=8100  # Any free port (unused when using Cloud Agents)
+            # port=8700  # Any free port (unused when using Cloud Agents)
         )
     )
